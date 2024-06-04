@@ -23,6 +23,7 @@ ThemeData getTheme()=>
           fontFamily: 'Nunito',
           fontSize: 11,
           fontWeight: FontWeight.w400,
+          color: Color.fromRGBO(76, 76, 105, 1),
         ),
         headlineSmall: TextStyle(
           fontFamily: 'Nunito',

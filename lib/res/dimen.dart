@@ -8,4 +8,6 @@ class Dimen {
 
   static const paddingHorizontal20 = 20.0;
   static const paddingHorizontal12 = 12.0;
+
+  static const paddingVertical23 = 23.0;
 }
