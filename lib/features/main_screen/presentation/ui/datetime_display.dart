@@ -1,0 +1,46 @@
+import 'dart:async';
+
+import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import 'package:mood_test/features/main_screen/presentation/notifier/main_screen_change_notifier.dart';
+import 'package:mood_test/res/app_theme.dart';
+import 'package:provider/provider.dart';
+
+class DateTimeDisplay extends StatefulWidget {
+  @override
+  _DateTimeDisplayState createState() => _DateTimeDisplayState();
+}
+
+class _DateTimeDisplayState extends State<DateTimeDisplay> {
+  String _timeString = "";
+
+  final textThemes = getTheme().textTheme;
+
+  @override
+  void initState() {
+    _timeString = _formatDateTime(DateTime.now());
+    Timer.periodic(Duration(seconds: 1), (Timer t) => _getTime());
+    super.initState();
+  }
+
+  void _getTime() {
+    final String formattedDateTime = _formatDateTime(DateTime.now());
+    setState(() {
+      _timeString = formattedDateTime;
+    });
+  }
+
+  String _formatDateTime(DateTime dateTime) {
+    return DateFormat('d MMMM HH:mm').format(dateTime);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      _timeString,
+      style: textThemes.titleLarge?.copyWith(
+        color: const Color.fromRGBO(188, 188, 191, 1),
+      ),
+    );
+  }
+}

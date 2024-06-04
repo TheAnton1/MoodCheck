@@ -1,17 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:mood_test/features/main_screen/presentation/notifier/main_screen_change_notifier.dart';
 import 'package:mood_test/features/main_screen/presentation/ui/main_screen.dart';
+import 'package:provider/provider.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Test Mood',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      initialRoute: "/main",
+      routes: {
+        "/main": (context) => ChangeNotifierProvider(
+            create: (_) => MainScreenChangeNotifier(),
+            child: const MainScreen())
+      },
     );
   }
 }
