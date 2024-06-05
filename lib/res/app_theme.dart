@@ -25,6 +25,12 @@ ThemeData getTheme()=>
           fontWeight: FontWeight.w400,
           color: Color.fromRGBO(76, 76, 105, 1),
         ),
+        bodyLarge: TextStyle(
+          fontFamily: 'Nunito',
+          fontSize: 20,
+          fontWeight: FontWeight.w400,
+          color: Colors.white,
+        ),
         headlineSmall: TextStyle(
           fontFamily: 'Nunito',
           fontSize: 11,

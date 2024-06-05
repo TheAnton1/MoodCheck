@@ -31,21 +31,25 @@ class MoodCard extends StatelessWidget {
           height: Dimen.height118,
           width: Dimen.width83,
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(Dimen.radius76),
-              boxShadow: const [
-                BoxShadow(
-                  color: AppColors.shadow,
-                  blurRadius: 10.8,
-                  spreadRadius: 0,
-                  offset: Offset(2, 4),
-                ),
-              ],
-              border: Border.all(
-                  color: isSelected ? AppColors.mandarin : Colors.transparent,
-                  width: isSelected ? Dimen.width2 : 0.0)),
+            borderRadius: BorderRadius.circular(Dimen.radius76),
+            color: Colors.white,
+            boxShadow: const [
+              BoxShadow(
+                color: AppColors.shadow,
+                blurRadius: 10.8,
+                spreadRadius: 0,
+                offset: Offset(2, 4),
+              ),
+            ],
+            border: Border.all(
+                color: isSelected ? AppColors.mandarin : Colors.transparent,
+                width: Dimen.width2),
+          ),
           child: Column(
             children: [
-              const Padding(padding: EdgeInsets.only(top: Dimen.paddingVertical23),),
+              const Padding(
+                padding: EdgeInsets.only(top: Dimen.paddingVertical23),
+              ),
               Image.asset(
                 "assets/$asset",
                 height: 53,
