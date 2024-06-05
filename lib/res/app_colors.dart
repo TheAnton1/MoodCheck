@@ -8,4 +8,6 @@ class AppColors {
   static const buttonGrey = Color.fromRGBO(242, 242, 242, 1);
   static const sliderText = Color.fromRGBO(145, 158, 171, 1);
   static const noteBlack = Color.fromRGBO(76, 76, 105, 1);
+  static const peach = Color.fromRGBO(255, 135, 2, 0.25);
+
 }

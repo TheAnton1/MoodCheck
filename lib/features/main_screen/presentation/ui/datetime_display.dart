@@ -2,9 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:mood_test/features/main_screen/presentation/notifier/main_screen_change_notifier.dart';
 import 'package:mood_test/res/app_theme.dart';
-import 'package:provider/provider.dart';
 
 class DateTimeDisplay extends StatefulWidget {
   @override

@@ -1,5 +1,6 @@
 class Dimen {
   static const height118 = 118.0;
+  static const height200 = 200.0;
   static const height6 = 6.0;
 
   static const width83 = 83.0;
@@ -12,6 +13,7 @@ class Dimen {
   static const paddingHorizontal20 = 20.0;
   static const paddingHorizontal22 = 22.0;
   static const paddingHorizontal12 = 12.0;
+  static const paddingHorizontal17 = 17.0;
 
   static const paddingVertical23 = 23.0;
   static const paddingVertical36 = 36.0;

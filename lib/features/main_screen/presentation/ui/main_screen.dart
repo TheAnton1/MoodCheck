@@ -3,7 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mood_test/core/ui/default_decoration.dart';
-import 'package:mood_test/features/main_screen/presentation/notifier/main_screen_change_notifier.dart';
+import 'package:mood_test/features/main_screen/presentation/notifier/main_notifier.dart';
 import 'package:mood_test/features/main_screen/presentation/res/strings.dart';
 import 'package:mood_test/features/main_screen/presentation/ui/datetime_display.dart';
 import 'package:mood_test/features/main_screen/presentation/ui/mood_card.dart';
@@ -31,7 +31,7 @@ class _MainScreenState extends State<MainScreen> {
         surfaceTintColor: Colors.white,
         actions: [
           IconButton(
-            onPressed: null,
+            onPressed: () => Navigator.pushNamed(context, "/calendar"),
             icon: SvgPicture.asset(
               "assets/calendar.svg",
               colorFilter:

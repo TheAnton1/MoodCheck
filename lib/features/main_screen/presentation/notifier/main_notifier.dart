@@ -35,7 +35,7 @@ class MainScreenChangeNotifier extends ChangeNotifier {
 
   void onMoodChange(String text) {
     mood = text;
-    checkIfButtonClickable();
+    checkIfButtonClickable(); 
     notifyListeners();
   }
 
