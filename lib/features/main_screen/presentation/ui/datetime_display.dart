@@ -17,7 +17,7 @@ class _DateTimeDisplayState extends State<DateTimeDisplay> {
   @override
   void initState() {
     _timeString = _formatDateTime(DateTime.now());
-    Timer.periodic(Duration(seconds: 1), (Timer t) => _getTime());
+    Timer.periodic(const Duration(seconds: 1), (Timer t) => _getTime());
     super.initState();
   }
 
@@ -29,15 +29,18 @@ class _DateTimeDisplayState extends State<DateTimeDisplay> {
   }
 
   String _formatDateTime(DateTime dateTime) {
-    return DateFormat('d MMMM HH:mm').format(dateTime);
+    return DateFormat('d MMMM HH:mm', 'ru_RU').format(dateTime);
   }
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      _timeString,
-      style: textThemes.titleLarge?.copyWith(
-        color: const Color.fromRGBO(188, 188, 191, 1),
+    return GestureDetector(
+      onTap: () => Navigator.pushNamed(context, "/calendar"),
+      child: Text(
+        _timeString,
+        style: textThemes.titleLarge?.copyWith(
+          color: const Color.fromRGBO(188, 188, 191, 1),
+        ),
       ),
     );
   }

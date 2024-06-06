@@ -2,9 +2,11 @@ import 'dart:developer';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mood_test/features/calendar/presentation/notifier/calendar_notifier.dart';
 import 'package:mood_test/res/app_colors.dart';
 import 'package:mood_test/res/app_theme.dart';
 import 'package:mood_test/res/dimen.dart';
+import 'package:provider/provider.dart';
 
 class CalendarCard extends StatefulWidget {
   final String month;
@@ -33,6 +35,8 @@ class _CalendarCardState extends State<CalendarCard>
   Widget build(BuildContext context) {
     final textThemes = getTheme().textTheme;
     bool isToday = false;
+    final notifier = Provider.of<CalendarNotifier>(context);
+
     super.build(context);
 
     return SizedBox(

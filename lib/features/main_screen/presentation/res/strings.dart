@@ -15,4 +15,10 @@ class Strings {
   static const high = "Высокий";
   static const unconfidence = "Неуверенность";
   static const confidence = "Уверенность";
+
+  static const typeNote = "Введите заметку";
+  static const save = "Сохранить";
+
+  static const dataSaved = "Данные сохранены";
+  static const ok = "Ок";
 }

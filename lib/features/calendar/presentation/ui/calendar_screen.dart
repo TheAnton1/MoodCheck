@@ -43,7 +43,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
           )
         ],
         bottom: PreferredSize(
-          preferredSize: Size.fromHeight(24.0),
+          preferredSize: const Size.fromHeight(Dimen.height24),
           child: Consumer<CalendarNotifier>(
             builder: (context, notifier, child) {
               return Text(
