@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:mood_test/core/themes/tabbar_theme.dart';
+import 'package:mood_test/features/calendar/presentation/notifier/appbar_notifier.dart';
 import 'package:mood_test/features/calendar/presentation/notifier/calendar_notifier.dart';
 import 'package:mood_test/features/calendar/presentation/ui/calendar_screen.dart';
 import 'package:mood_test/features/main_screen/presentation/notifier/main_notifier.dart';
@@ -35,10 +36,13 @@ class MyApp extends StatelessWidget {
         "/main": (context) => ChangeNotifierProvider(
             create: (_) => MainScreenChangeNotifier(),
             child: const MainScreen()),
-        "/calendar": (context) => ChangeNotifierProvider(
-              create: (_) => CalendarNotifier(),
-              child: const CalendarScreen(),
-            )
+        "/calendar": (context) => MultiProvider(
+          providers: [
+            ChangeNotifierProvider(create: (_) => CalendarNotifier()),
+            ChangeNotifierProvider(create: (_) => AppBarNotifier()),
+          ],
+          child: const CalendarScreen(),
+        )
       },
     );
   }

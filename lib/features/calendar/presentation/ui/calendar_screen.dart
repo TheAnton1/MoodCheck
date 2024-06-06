@@ -1,5 +1,8 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:mood_test/features/calendar/presentation/notifier/appbar_notifier.dart';
 import 'package:mood_test/features/calendar/presentation/notifier/calendar_notifier.dart';
 import 'package:mood_test/features/calendar/presentation/res/strings.dart';
 import 'package:mood_test/features/calendar/presentation/ui/calendar_card.dart';
@@ -19,10 +22,10 @@ class _CalendarScreenState extends State<CalendarScreen> {
   final textThemes = getTheme().textTheme;
   final ScrollController _scrollController = ScrollController();
 
-
   @override
   Widget build(BuildContext context) {
     final notifier = Provider.of<CalendarNotifier>(context);
+    final appBarNotifier = Provider.of<AppBarNotifier>(context);
     return Scaffold(
       appBar: AppBar(
         surfaceTintColor: Colors.white,
@@ -45,7 +48,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
           child: Consumer<CalendarNotifier>(
             builder: (context, notifier, child) {
               return Text(
-                '${notifier.currentYear}',
+                '${appBarNotifier.currentYear}',
                 textAlign: TextAlign.center,
                 style: textThemes.bodySmall
                     ?.copyWith(fontWeight: FontWeight.w800, fontSize: 26),
@@ -57,8 +60,9 @@ class _CalendarScreenState extends State<CalendarScreen> {
       body: NotificationListener<ScrollNotification>(
         onNotification: (ScrollNotification notification) {
           if (notification is ScrollUpdateNotification) {
-            int firstVisibleElement = (_scrollController.offset / 210).floor();
-            notifier.updateAppBarDate(firstVisibleElement);
+            int firstVisibleElement =
+                (_scrollController.offset / Dimen.height210).floor();
+            appBarNotifier.updateAppBarDate(firstVisibleElement);
           }
           return true;
         },
@@ -81,7 +85,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
                   month: notifier.months[monthIndex],
                   items: items,
                   isCurrentMonth: DateTime.now().month == monthIndex + 1,
-                  currentYear: notifier.currentYear,
+                  currentYear: notifier.startYear + yearIndex,
                 ),
               ),
             );

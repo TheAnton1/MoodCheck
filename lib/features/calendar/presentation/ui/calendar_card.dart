@@ -32,7 +32,7 @@ class _CalendarCardState extends State<CalendarCard>
     super.build(context);
 
     return SizedBox(
-      height: Dimen.height200,
+      height: Dimen.height210,
       child: Card(
         color: Colors.transparent,
         surfaceTintColor: Colors.transparent,

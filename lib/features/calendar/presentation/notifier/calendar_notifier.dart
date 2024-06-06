@@ -45,15 +45,5 @@ class CalendarNotifier extends ChangeNotifier {
     return List<String>.filled(lastDayInPreviousMonth, "") + numbers;
   }
 
-  void updateAppBarDate(int index) {
-    int newYear = _startYear + index ~/ 6;
-    if (currentYear != newYear) {
-      Future.delayed(const Duration(milliseconds: 150), () {
-        if (currentYear != newYear) {
-          currentYear = newYear;
-          notifyListeners();
-        }
-      });
-    }
-  }
+
 }
