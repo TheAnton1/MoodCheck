@@ -2,6 +2,7 @@ class Dimen {
   static const height118 = 118.0;
   static const height200 = 200.0;
   static const height6 = 6.0;
+  static const height8 = 8.0;
   static const height24 = 24.0;
   static const height30 = 30.0;
 
@@ -12,6 +13,7 @@ class Dimen {
   static const radius9 = 9.0;
   static const radius13 = 13.0;
   static const radius47 = 47.0;
+  static const radius10_8 = 10.8;
 
   static const paddingHorizontal20 = 20.0;
   static const paddingHorizontal22 = 22.0;

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mood_test/core/ui/default_decoration.dart';
+import 'package:mood_test/core/themes/default_decoration.dart';
 import 'package:mood_test/res/app_colors.dart';
 import 'package:mood_test/res/app_theme.dart';
 import 'package:mood_test/res/dimen.dart';
@@ -25,7 +25,7 @@ class _MoodSliderState extends State<MoodSlider> {
   @override
   Widget build(BuildContext context) {
     final textThemes = getTheme().textTheme;
-    double _value = widget.sliderValue;
+    double value = widget.sliderValue;
 
     return Container(
       decoration: DefaultDecoration.getAppDecoration(),
@@ -44,8 +44,8 @@ class _MoodSliderState extends State<MoodSlider> {
                         6,
                         (index) => Container(
                               color: AppColors.helpGrey,
-                              height: 8,
-                              width: 2,
+                              height: Dimen.height8,
+                              width: Dimen.width2,
                             )),
                   ),
                 ),
@@ -80,13 +80,13 @@ class _MoodSliderState extends State<MoodSlider> {
                     overlayColor: Colors.transparent,
                   ),
                   child: Slider(
-                    value: _value,
+                    value: value,
                     onChanged: (newValue) {
                       setState(() {
-                          _value = newValue;
+                          value = newValue;
                         },
                       );
-                      widget.onChanged.call(_value);
+                      widget.onChanged.call(value);
                     },
                   ),
                 ),

@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 
 class CalendarNotifier extends ChangeNotifier {
@@ -50,7 +48,7 @@ class CalendarNotifier extends ChangeNotifier {
   void updateAppBarDate(int index) {
     int newYear = _startYear + index ~/ 6;
     if (currentYear != newYear) {
-      Future.delayed(Duration(milliseconds: 150), () {
+      Future.delayed(const Duration(milliseconds: 150), () {
         if (currentYear != newYear) {
           currentYear = newYear;
           notifyListeners();

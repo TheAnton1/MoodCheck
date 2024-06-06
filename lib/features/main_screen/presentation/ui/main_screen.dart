@@ -1,8 +1,6 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:mood_test/core/ui/default_decoration.dart';
+import 'package:mood_test/core/themes/default_decoration.dart';
 import 'package:mood_test/features/main_screen/presentation/notifier/main_notifier.dart';
 import 'package:mood_test/features/main_screen/presentation/res/strings.dart';
 import 'package:mood_test/features/main_screen/presentation/ui/datetime_display.dart';
@@ -96,7 +94,7 @@ class _MainScreenState extends State<MainScreen>
             ),
           ),
           centerTitle: true,
-          title: DateTimeDisplay(),
+          title: const DateTimeDisplay(),
         ),
         body: TabBarView(
           controller: _tabController,
@@ -276,7 +274,7 @@ class _MainScreenState extends State<MainScreen>
                 )
               ],
             ),
-            Center(
+            const Center(
               child: Text(
                 "Когда-нибудь здесь будет статистика",
                 textAlign: TextAlign.center,

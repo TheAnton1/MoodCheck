@@ -1,12 +1,7 @@
-import 'dart:developer';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mood_test/features/calendar/presentation/notifier/calendar_notifier.dart';
 import 'package:mood_test/res/app_colors.dart';
 import 'package:mood_test/res/app_theme.dart';
 import 'package:mood_test/res/dimen.dart';
-import 'package:provider/provider.dart';
 
 class CalendarCard extends StatefulWidget {
   final String month;
@@ -15,12 +10,11 @@ class CalendarCard extends StatefulWidget {
   final int currentYear;
 
   const CalendarCard(
-      {Key? key,
+      {super.key,
       required this.month,
       required this.items,
       required this.isCurrentMonth,
-      required this.currentYear})
-      : super(key: key);
+      required this.currentYear});
 
   @override
   _CalendarCardState createState() => _CalendarCardState();
@@ -35,8 +29,6 @@ class _CalendarCardState extends State<CalendarCard>
   Widget build(BuildContext context) {
     final textThemes = getTheme().textTheme;
     bool isToday = false;
-    final notifier = Provider.of<CalendarNotifier>(context);
-
     super.build(context);
 
     return SizedBox(
@@ -73,7 +65,7 @@ class _CalendarCardState extends State<CalendarCard>
                           ),
                           child: Center(
                             child: Text(
-                              "$item",
+                              item,
                               style: textThemes.bodySmall?.copyWith(
                                   fontWeight: FontWeight.w500, fontSize: 10),
                             ),
@@ -81,7 +73,7 @@ class _CalendarCardState extends State<CalendarCard>
                         )
                       : Center(
                           child: Text(
-                            "$item",
+                            item,
                             style: textThemes.bodySmall?.copyWith(
                                 fontWeight: FontWeight.w500, fontSize: 10),
                           ),

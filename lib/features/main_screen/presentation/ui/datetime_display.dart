@@ -5,6 +5,8 @@ import 'package:intl/intl.dart';
 import 'package:mood_test/res/app_theme.dart';
 
 class DateTimeDisplay extends StatefulWidget {
+  const DateTimeDisplay({super.key});
+
   @override
   _DateTimeDisplayState createState() => _DateTimeDisplayState();
 }

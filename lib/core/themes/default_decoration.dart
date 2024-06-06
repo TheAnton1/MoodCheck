@@ -10,7 +10,7 @@ class DefaultDecoration {
       boxShadow: const [
         BoxShadow(
           color: AppColors.shadow,
-          blurRadius: 10.8,
+          blurRadius: Dimen.radius10_8,
           spreadRadius: 0,
           offset: Offset(2, 4),
         ),
